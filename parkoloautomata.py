@@ -1,8 +1,12 @@
 from datetime import datetime as dt
+from colorama import Fore,init
 
-
-
-
+def keret(fuggveny):
+    def belso(self):
+        print(Fore.LIGHTCYAN_EX+ "─────────────────── ᯓ⛟ ─────────────────────")
+        fuggveny(self)
+        print(Fore.LIGHTCYAN_EX + "─────────────────── ᯓ⛟ ─────────────────────" + Style.RESET_ALL)
+    return belso
 
 class ParkoloJegy:
     def __init__(self,hely,rendszam,belepes_ido,kilepes_ido):
@@ -10,6 +14,8 @@ class ParkoloJegy:
         self.rendszam = rendszam
         self.belepes_ido = belepes_ido
         self.kilepes_ido = kilepes_ido
+
+
 class OradijJegy(ParkoloJegy):
     def ar_szamitasa(self):
            parkolas_idotartam = self.belepes_ido - self.kilepes_ido
